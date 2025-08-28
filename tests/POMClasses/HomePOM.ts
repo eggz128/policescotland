@@ -3,11 +3,11 @@ import {Page, Locator} from '@playwright/test'
 export class HomePOM {
 
     //Fields
-    page: Page
+    #page: Page //page field should be private for proper encapsulation
     loginLink: Locator
 
     constructor(page: Page){
-        this.page = page;
+        this.#page = page;
 
         //Locators
         this.loginLink = page.getByText('Login')
